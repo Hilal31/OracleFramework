@@ -50,7 +50,7 @@ public class TestPage extends BaseTest{
         System.out.println("After clicking title= "+ lp.titleAfterClick.getText());
         BrowserUtils.wait(2);
 
-        assertEquals(lp.firstTitle.getText(), lp.titleAfterClick.getText());
+        assertEquals("WW Studio @ Chelsea", lp.titleAfterClick.getText() );
 
 
         //7) Click on Business Hours
@@ -58,7 +58,13 @@ public class TestPage extends BaseTest{
         lp.businessHours.click();
 
         //8) Create a method to print all the business hours for that studio
-        List<WebElement> printBusinessHours=driver.findElements(By.xpath("//*[@id=\"main\"]/div[1]/div[2]/div/div[2]/div[2]/div[2]/div/div[1]"));
+        List<WebElement> printBusinessHours=driver.findElements(By.xpath("//*[@id=\"main\"]/div[1]/div[2]/div/div[2]/div[2]/div[2]/div/div"));
+
+        for (WebElement hours:printBusinessHours)
+            System.out.println(hours.getText());{
+
+        }
+
 
 
 
